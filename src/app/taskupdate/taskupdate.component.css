@@ -1,0 +1,16 @@
+.content{
+    padding-top: 10px;
+}
+.col{
+    display:flex;
+    gap:10px;
+    
+    mat-form-field{
+        width: 100%;
+    }
+}
+
+.form-control{
+    width: 50%;
+    height: 55px;
+}

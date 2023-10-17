@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'"
+  [mode]="'side'" 
+  [opened]="false">
+    <mat-nav-list>
+
+      <a mat-list-item href="#" routerLink="/taskview" class="nav-list-item">
+        <img [src]="taskImageSrc" alt="Task" class="nav-image small-image">
+        Task
+      </a>
+      <a mat-list-item href="#" routerLink="/remainders" class="nav-list-item">
+        <img [src]="remaindersImageSrc" alt="Reminders" class="nav-image small-image">
+        Reminders
+      </a>
+      <a mat-list-item href="#" routerLink="/archive" class="nav-list-item">
+        <img [src]="archiveImageSrc" alt="Archive" class="nav-image small-image">
+        Archive
+      </a>
+    </mat-nav-list>
+    </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="unique-toolbar" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img [src]="logoImagePath" alt="Your Logo" class="logo">
+      <span id="title">To Do List</span>
+      <button mat-button *ngIf="isLoggedIn()" (click)="logout()" class="logout-button" matTooltip="Logout">
+        <i class="material-icons">exit_to_app</i>
+      </button>
+    </mat-toolbar>
+</mat-sidenav-content>
+  
+</mat-sidenav-container>

@@ -1,0 +1,127 @@
+
+.task-card {
+    margin: 0 auto; 
+    margin-top: 20px;
+    width: 65%; 
+    padding: 5px;
+    border-radius: 5px;
+    background-color:#9161AB ;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    clear: both;
+}
+
+
+.task-card:not(:first-child) {
+    margin-right: 20px; 
+    margin-left: 20px;
+}
+
+
+.task-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.task-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.task-description {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+.task-date{
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+    font-style: italic;
+    align-items: end;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.task-category {
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.task-priority {
+    margin-top: 10px;
+}
+
+/* Style the icons in the card actions */
+.icons {
+    font-size: 28px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+/* Color the icons */
+.color-blue {
+    color: #2196f3; /* Blue */
+}
+
+.color-purple {
+    color: #9c27b0; /* Purple */
+}
+
+.color-red {
+    color: #f44336; /* Red */
+}
+
+.color-green {
+    color: #4caf50; /* Green */
+}
+
+.color-orange {
+    color: #ff9800; /* Orange */
+}
+
+.flag-button {
+    font-size: larger;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+  
+}
+/* .card-actions {
+    
+  } */
+.icon-group {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-right: 140px;
+}
+.flag-icon{
+    font-size: 20px;
+}
+
+
+.task-card {
+    color: #FF5733; 
+}
+.task-description {
+    color: #561475;
+    font-size: 14px;
+}
+
+.strike-out-text {
+    text-decoration: line-through;
+}

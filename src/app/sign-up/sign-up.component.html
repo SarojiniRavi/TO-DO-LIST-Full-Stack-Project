@@ -1,0 +1,31 @@
+<div class="signup-container">
+    <form [formGroup]="userForm" (ngSubmit)="signUp()" class="signup-form">
+      <h2>Create an Account</h2>
+      <mat-form-field class="form-field">
+        <input matInput formControlName="userId" placeholder="User ID" required>
+        <mat-error *ngIf="userForm.get('userId')?.hasError('required')">User ID is required</mat-error>
+        <mat-error *ngIf="userForm.get('userId')?.hasError('minlength')">User ID must be atleast 3 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput formControlName="userName" placeholder="User Name" required>
+        <mat-error *ngIf="userForm.get('userName')?.hasError('required')">User Name is required</mat-error>
+        <mat-error *ngIf="userForm.get('userName')?.hasError('pattern')">Invalid characters in User Name</mat-error>
+        <mat-error *ngIf="userForm.get('userId')?.hasError('minlength')">User Name must be atleast 3 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput formControlName="userEmail" placeholder="Email" required>
+        <mat-error *ngIf="userForm.get('userEmail')?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="userForm.get('userEmail')?.hasError('pattern')">Invalid email format</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput formControlName="userPassword" type="password" placeholder="Password" required>
+        <mat-error *ngIf="userForm.get('userPassword')?.hasError('required')">Password is required</mat-error>
+        <mat-error *ngIf="userForm.get('userPassword')?.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+      </mat-form-field>
+      <button mat-raised-button class="custom-primary-button" type="submit" [disabled]="userForm.invalid">Sign Up</button>
+    <div class="form-footer">
+        <span>Already have an account? <a routerLink="/login">Login</a></span>
+      </div>
+    </form>
+  </div>
+  

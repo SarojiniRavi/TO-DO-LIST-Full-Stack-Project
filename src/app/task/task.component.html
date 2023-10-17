@@ -1,0 +1,31 @@
+<div class="task-card">
+  <mat-card class="card">
+    <div class="card-header" [ngClass]="{ 'strike-out-text': strikeOutAll }">
+      <mat-card-title class="task-title" >{{tasks.taskTitle}}</mat-card-title>
+      <p class="task-date">{{ tasks.taskDate | date }}</p>
+    </div>
+    <mat-card-content [ngClass]="{ 'strike-out-text': strikeOutAll }">
+      <p class="task-category"><u>{{tasks.taskCategory}}</u></p>
+      <p class="task-description">{{tasks.taskDescription}}</p>
+    </mat-card-content>
+    <span class="flag-button">
+      <button matTooltip="High" *ngIf="tasks.taskPriority == 'High'" color="warn" mat-icon-button class="flag">
+        <mat-icon class="flag-icon" >flag</mat-icon>
+      </button>
+      <button matTooltip="Medium" *ngIf="tasks.taskPriority === 'Medium'" color="primary" mat-icon-button class="flag">
+      <mat-icon class="flag-icon" >flag</mat-icon>
+      </button>
+      <button matTooltip="Low" *ngIf="tasks.taskPriority === 'Low'" class="text-success flag" mat-icon-button >
+      <mat-icon class="flag-icon" >flag</mat-icon>
+      </button>
+    </span>
+    <mat-card-actions class="card-actions">
+      <div class="icon-group">
+        <mat-checkbox [(ngModel)]="strikeOutAll" id="strikeCheckbox" matTooltip="Strike Out" style="display: none;"></mat-checkbox>
+        <mat-icon class="icons color-purple" (click)="onArchive(tasks)" matTooltip="Archive">archive</mat-icon>
+        <mat-icon class="icons color-purple" (click)="openDialog(tasks)" matTooltip="Edit Task">edit</mat-icon>
+        <mat-icon class="icons color-purple" (click)="deleteTask(tasks.id)" matTooltip="Delete Task">delete</mat-icon>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

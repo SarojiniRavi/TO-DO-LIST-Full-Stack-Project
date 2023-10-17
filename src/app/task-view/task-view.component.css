@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 240px;
+}
+
+app-search {
+  margin-right: 50px;
+  margin-left: -200px;
+}
+
+.flags{
+  border:2px solid black;
+  border-radius: 10px;
+  width:200px;
+  
+}
+button img {
+  width: 38px;
+  height: 38px;
+  margin-right: 35px; 
+}
+
+#priorityFilter{
+  margin-right: 40px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
+  }
+#img{
+  width:50px;
+  height:50px;
+}
+.pagination button {
+  font-size: 12px; 
+  font-weight: bold;
+  padding: 3px 6px; 
+  border-radius: 5px;
+  background-color: #2196f3; 
+  color: #fff; 
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 3px; 
+}
+
+.pagination button:hover {
+  background-color: #1976d2; 
+}
+
+.pagination button[disabled] {
+  background-color: #ccc; 
+  cursor: not-allowed;
+}
+
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.sort-dropdown-container {
+  display: inline-block;
+}
+
+.button {
+  font-size: 900px;
+  color: black;
+}
+select {
+  padding: 10px; 
+  font-size: 18px; 
+  appearance: none;
+  color: black;
+  border: none;
+  width: 100px; 
+  cursor: pointer;
+}
+
+
+
+select::before {
+ 
+  display: inline-block;
+  position: absolute;
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mat-select {
+  width: 300px; 
+}
+.mat-option {
+  font-size: 20px;
+  padding: 10px 16px; 
+}

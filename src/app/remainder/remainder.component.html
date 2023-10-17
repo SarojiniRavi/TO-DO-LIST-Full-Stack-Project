@@ -1,0 +1,10 @@
+<div *ngIf="noTasksMessage; else tasksList" class="no-tasks-message">
+    <p>{{ noTasksMessage }}</p>
+  </div>
+  
+  <ng-template #tasksList>
+    <div>
+      <app-task *ngFor="let t of tasks" [tasks]="t"></app-task>
+    </div>
+  </ng-template>
+  

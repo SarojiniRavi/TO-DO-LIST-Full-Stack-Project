@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Task Category</h1>
+<div mat-dialog-content>
+  <p>Add Category</p>
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <input matInput [(ngModel)]="data.taskCategory">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.taskCategory">Ok</button>
+</div>

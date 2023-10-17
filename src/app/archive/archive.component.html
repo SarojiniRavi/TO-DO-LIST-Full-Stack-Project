@@ -1,0 +1,26 @@
+<div class="task-card" *ngFor="let archivedTask of archivedTasks">
+  <mat-card class="card">
+    <div class="card-header">
+      <mat-card-title class="task-title" [ngClass]="{ 'strike-out-text': strikeOutAll }">{{archivedTask.taskTitle}}</mat-card-title>
+      <p class="task-date" [ngClass]="{ 'strike-out-text': strikeOutAll }">{{archivedTask.taskDate | date}}</p>
+    </div>
+    <mat-card-content [ngClass]="{ 'strike-out-text': strikeOutAll }">
+      <p class="task-category" ><u>{{archivedTask.taskCategory}}</u></p>
+      <p class="task-description">{{archivedTask.taskDescription}}</p>
+    </mat-card-content>
+    <span class="flag-button">
+      <button *ngIf="archivedTask.taskPriority == 'High'" color="warn" mat-icon-button>
+        <mat-icon>flag</mat-icon>
+      </button>
+      <button *ngIf="archivedTask.taskPriority === 'Medium'" color="primary" mat-icon-button>
+        <mat-icon>flag</mat-icon>
+      </button>
+      <button *ngIf="archivedTask.taskPriority === 'Low'" color="accent" mat-icon-button>
+        <mat-icon>flag</mat-icon>
+      </button>
+    </span>
+    <mat-card-actions>
+      <mat-icon class="icons color-orange" (click)="deleteTask(archivedTask.id)">delete</mat-icon>
+    </mat-card-actions>
+  </mat-card>
+</div>

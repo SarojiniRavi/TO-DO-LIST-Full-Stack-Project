@@ -1,0 +1,26 @@
+.error-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #f44336; /* Red color for the header */
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  a {
+    color: #2196f3; /* Blue color for the link */
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  a:hover {
+    color: #0d47a1; /* Darker blue color on hover */
+  }
+  

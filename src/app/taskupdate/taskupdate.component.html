@@ -1,0 +1,33 @@
+<div mat-dialog-title>
+    <h1>Update Task</h1>
+</div>
+<form (ngSubmit)="onSubmit()" [formGroup]="register">
+    <div mat-dialog-content class="content">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Title" type="text" formControlName="taskTitle" />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Description" type="text" formControlName="taskDescription" />
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Category" type="text" formControlName="taskCategory" />
+            </mat-form-field>
+
+            <input type="date" formControlName="taskDate" class="form-control">
+
+        </div>
+        <mat-radio-group aria-label="priority" formControlName="taskPriority" placeholder="Add Priority">
+            <mat-label><b>Priority</b></mat-label>
+            <mat-radio-button class="radio" value="Low">Low</mat-radio-button>
+            <mat-radio-button class="radio" value="Medium">Medium</mat-radio-button>
+            <mat-radio-button class="radio" value="High">High</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+    </div>
+</form>
