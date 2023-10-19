@@ -1,23 +1,24 @@
 <div id="img">
   <div id="h1">
-<div id="login-form" class="login-container">
-  <h2>Login to Your Account</h2>
-  <form (ngSubmit)="login()">
-    <mat-form-field class="form-field">
-      <input matInput type="email" name="userEmail" required [(ngModel)]="userEmail" placeholder="Email">
-      <mat-label>Email</mat-label>
-      <mat-icon matSuffix>email</mat-icon>
-    </mat-form-field>
-    <mat-form-field class="form-field">
-      <input matInput type="password" name="userPassword" required [(ngModel)]="userPassword" placeholder="Password">
-      <mat-label>Password</mat-label>
-      <mat-icon matSuffix>lock</mat-icon>
-    </mat-form-field>
-    <button mat-raised-button class="custom-primary-button" type="submit">Login</button>
-  </form>
-  <div class="form-footer">
-    <span>Don't have an account? <a routerLink="/signUp">Sign Up</a></span>
+    <div id="login-form" class="login-container">
+      <h2>Login to Your Account</h2>
+      <form (ngSubmit)="login()">
+        <mat-form-field class="form-field">
+          <input matInput type="email" name="userEmail" required [(ngModel)]="userEmail" placeholder="Email">
+          <mat-label>Email</mat-label>
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input matInput type="password" name="userPassword" required [(ngModel)]="userPassword"
+            placeholder="Password">
+          <mat-label>Password</mat-label>
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button class="custom-primary-button" type="submit">Login</button>
+      </form>
+      <div class="form-footer">
+        <span>Don't have an account? <a routerLink="/signUp">Sign Up</a></span>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>

@@ -1,55 +1,57 @@
 <h2 mat-dialog-title>Daily Task</h2>
 <mat-dialog-content class="mat-typography">
-    <div id="add-note">
-        <div class="input-group mb-3">
-            <input class="form-control" [(ngModel)]="task.taskTitle" required name="taskTitle" #taskTitle="ngModel"
-                type="text" placeholder=" Add Title">
-        </div>
-        <br>
-        <div class="mb-3">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="task.taskDescription"
-                name="taskDescription" placeholder="Add Description" #taskDescription="ngModel" type="text"></textarea>
-        </div>
-        <br>
-        <input [min]="minDate.toISOString().split('T')[0]" class="form-control" type="date" name="taskDate" #taskDate="ngModel" [(ngModel)]="task.taskDate">
-        <mat-icon (click)="openDialog()" class="icons" matTooltip="Category">add_box</mat-icon>
-        <mat-menu #menu="matMenu">
-            <input matInput [(ngModel)]="task.taskCategory" required name="taskCategory" #taskCategory="ngModel"
-                type="text" placeholder="Add Category">
-
-        </mat-menu>
-        <mat-icon [matMenuTriggerFor]="menu1" class="icons" matTooltip="Priority">flag</mat-icon>
-        <mat-menu #menu1="matMenu">
-            <mat-radio-group aria-label="priority" required name="priority" #priority="ngModel" [(ngModel)]="task.taskPriority" placeholder="Add Priority">
-              <mat-label>Priority</mat-label><br>
-          
-              <mat-radio-button class="radio" value="Low" >
-                <div class="priority-option">
-                  <span>Low</span>
-                  <mat-icon class="text-success flag" matTooltip="Low">flag</mat-icon>
-                </div>
-              </mat-radio-button><br>
-          
-              <mat-radio-button class="radio" value="Medium">
-                <div class="priority-option">
-                    <span>Medium</span>
-                  <mat-icon color="primary" matTooltip="Medium">flag</mat-icon>
-                </div>
-              </mat-radio-button><br>
-          
-              <mat-radio-button class="radio" value="High">
-                <div class="priority-option">
-                    <span>High</span>
-                  <mat-icon color="warn" matTooltip="High">flag</mat-icon>
-                </div>
-              </mat-radio-button><br>
-            </mat-radio-group>
-          </mat-menu>
-          
-        <br>
+  <div id="add-note">
+    <div class="input-group mb-3">
+      <input class="form-control" [(ngModel)]="task.taskTitle" required name="taskTitle" #taskTitle="ngModel"
+        type="text" placeholder=" Add Title">
     </div>
+    <br>
+    <div class="mb-3">
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="task.taskDescription"
+        name="taskDescription" placeholder="Add Description" #taskDescription="ngModel" type="text"></textarea>
+    </div>
+    <br>
+    <input [min]="minDate.toISOString().split('T')[0]" class="form-control" type="date" name="taskDate"
+      #taskDate="ngModel" [(ngModel)]="task.taskDate">
+    <mat-icon (click)="openDialog()" class="icons" matTooltip="Category">add_box</mat-icon>
+    <mat-menu #menu="matMenu">
+      <input matInput [(ngModel)]="task.taskCategory" required name="taskCategory" #taskCategory="ngModel" type="text"
+        placeholder="Add Category">
+
+    </mat-menu>
+    <mat-icon [matMenuTriggerFor]="menu1" class="icons" matTooltip="Priority">flag</mat-icon>
+    <mat-menu #menu1="matMenu">
+      <mat-radio-group aria-label="priority" required name="priority" #priority="ngModel"
+        [(ngModel)]="task.taskPriority" placeholder="Add Priority">
+        <mat-label>Priority</mat-label><br>
+
+        <mat-radio-button class="radio" value="Low">
+          <div class="priority-option">
+            <span>Low</span>
+            <mat-icon class="text-success flag" matTooltip="Low">flag</mat-icon>
+          </div>
+        </mat-radio-button><br>
+
+        <mat-radio-button class="radio" value="Medium">
+          <div class="priority-option">
+            <span>Medium</span>
+            <mat-icon color="primary" matTooltip="Medium">flag</mat-icon>
+          </div>
+        </mat-radio-button><br>
+
+        <mat-radio-button class="radio" value="High">
+          <div class="priority-option">
+            <span>High</span>
+            <mat-icon color="warn" matTooltip="High">flag</mat-icon>
+          </div>
+        </mat-radio-button><br>
+      </mat-radio-group>
+    </mat-menu>
+
+    <br>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions id="dialog">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit" (click)="addTask()">Save</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit" (click)="addTask()">Save</button>
 </mat-dialog-actions>

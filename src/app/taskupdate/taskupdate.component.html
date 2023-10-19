@@ -16,7 +16,8 @@
                 <input matInput placeholder="Category" type="text" formControlName="taskCategory" />
             </mat-form-field>
 
-            <input type="date" formControlName="taskDate" class="form-control">
+            <input type="date" [min]="minDate.toISOString().split('T')[0]" formControlName="taskDate"
+                class="form-control">
 
         </div>
         <mat-radio-group aria-label="priority" formControlName="taskPriority" placeholder="Add Priority">

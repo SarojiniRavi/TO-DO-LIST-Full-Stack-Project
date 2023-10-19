@@ -1,8 +1,8 @@
 <div class="container">
   <div class="header">
     <app-search id="search" (searchTextChanged)="searchtask($event)"></app-search>
-      <button mat-button (click)="openDialog()" id="button">
-      <img [src]="imagePath" alt="Add Task" matTooltip="Add Task"/>
+    <button mat-button (click)="openDialog()" id="button">
+      <img [src]="imagePath" alt="Add Task" matTooltip="Add Task" />
     </button>
     <div class="form-group row">
       <select [(ngModel)]="searchText" (change)="searchText === 'reset' ? show() : showFilter()" id="priorityFilter">
@@ -11,9 +11,9 @@
         <option value="Medium">Medium</option>
         <option value="High">High</option>
         <option value="reset">Reset</option>
-      </select>   
+      </select>
     </div>
-    
+
     <div class="sort-dropdown-container">
       <select #sortSelect (change)="onSortChange(sortSelect.value)">
         <option value="" disabled selected hidden>&uarr; &darr; Sort</option>
@@ -24,13 +24,12 @@
     </div>
   </div>
 </div>
-  
-  <app-task *ngFor="let t of displayedTasks" [tasks]="t"></app-task>
 
-  <div class="pagination">
-    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
-    <button *ngFor="let pageNumber of getLimitedPageNumbers()" (click)="onPageChange(pageNumber)"
-      [disabled]="currentPage === pageNumber">{{ pageNumber }}</button>
-    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
-  </div>
+<app-task *ngFor="let t of displayedTasks" [tasks]="t"></app-task>
 
+<div class="pagination">
+  <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  <button *ngFor="let pageNumber of getLimitedPageNumbers()" (click)="onPageChange(pageNumber)"
+    [disabled]="currentPage === pageNumber">{{ pageNumber }}</button>
+  <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+</div>

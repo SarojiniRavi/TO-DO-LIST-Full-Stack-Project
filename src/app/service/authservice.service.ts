@@ -7,11 +7,6 @@ import { TokenStorageService } from './token-storage.service';
 export class AuthService {
   constructor(private tokenStorageService: TokenStorageService) {}
 
-  login(token: string, user: any): void {
-    this.tokenStorageService.saveToken(token);
-    this.tokenStorageService.saveUser(user);
-  }
-
   logout(): void {
     this.tokenStorageService.signOut();
   }

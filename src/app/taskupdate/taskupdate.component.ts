@@ -37,8 +37,9 @@ export class TaskupdateComponent implements OnInit {
       taskPriority: "",
       taskDate: null
     });
+    this.minDate.setDate(this.minDate.getDate());
   }
-  
+  minDate = new Date();
   ngOnInit(): void {
     this.register.patchValue(this.data);
     console.log(this.data)

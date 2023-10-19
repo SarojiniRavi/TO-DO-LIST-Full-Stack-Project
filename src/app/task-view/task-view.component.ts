@@ -18,8 +18,8 @@ export class TaskViewComponent {
     public dialog: MatDialog){}
   
     ngOnInit() {
-      this.task.getTask().subscribe((archivedTasks:Task[]) => {
-        this.tasks = archivedTasks.filter(task=>task.taskStatus === false);
+      this.task.getTask().subscribe((taskAdd:Task[]) => {
+        this.tasks = taskAdd.filter(task=>task.taskStatus === false);
       });
       
     }
